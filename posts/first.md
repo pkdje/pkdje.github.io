@@ -2,7 +2,7 @@
 title: "첫 포스팅"
 date: "2025-01-21"
 tags: ["시작", "Next.js"]
-category: "개발"
+category: "dev"
 ---
 
 # 안녕하세요!

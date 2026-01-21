@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/lib/posts';
+import { getAllPosts, getCategoryDisplayName } from '@/lib/posts';
 import Link from 'next/link';
 import CategoryNav from '@/components/CategoryNav';
 
@@ -17,7 +17,7 @@ export default function Home() {
             <article className="border border-gray-700 p-6 rounded-lg hover:border-gray-500 transition cursor-pointer">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">
-                  {post.category}
+                  {getCategoryDisplayName(post.category || 'general')}
                 </span>
               </div>
               <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>

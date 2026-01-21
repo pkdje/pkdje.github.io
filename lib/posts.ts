@@ -13,6 +13,16 @@ export interface Post {
   category?: string;
 }
 
+const categoryNames: Record<string, string> = {
+  'dev': '개발',
+  'life': '일상',
+  'review': '리뷰',
+};
+
+export function getCategoryDisplayName(category: string): string {
+  return categoryNames[category] || category;
+}
+
 export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPosts = fileNames
@@ -29,7 +39,7 @@ export function getAllPosts(): Post[] {
         date: data.date,
         content,
         tags: data.tags || [],
-        category: data.category || '일반',
+        category: data.category || 'general',
       };
     });
 
@@ -44,7 +54,7 @@ export function getAllTags(): string[] {
 
 export function getAllCategories(): string[] {
   const posts = getAllPosts();
-  const categories = posts.map((post) => post.category || '일반');
+  const categories = posts.map((post) => post.category || 'general');
   return Array.from(new Set(categories));
 }
 

@@ -1,11 +1,11 @@
-import { getAllCategories, getPostsByCategory } from '@/lib/posts';
+import { getAllCategories, getPostsByCategory, getCategoryDisplayName } from '@/lib/posts';
 import Link from 'next/link';
 import CategoryNav from '@/components/CategoryNav';
 
 export function generateStaticParams() {
   const categories = getAllCategories();
   return categories.map((category) => ({
-    category: encodeURIComponent(category),
+    category: category,
   }));
 }
 
@@ -14,8 +14,7 @@ export default async function CategoryPage({
 }: {
   params: Promise<{ category: string }>;
 }) {
-  const { category: encodedCategory } = await params;
-  const category = decodeURIComponent(encodedCategory);
+  const { category } = await params;
   const posts = getPostsByCategory(category);
 
   return (
@@ -24,7 +23,7 @@ export default async function CategoryPage({
 
       <CategoryNav currentCategory={category} />
 
-      <h2 className="text-2xl font-semibold mb-6">{category}</h2>
+      <h2 className="text-2xl font-semibold mb-6">{getCategoryDisplayName(category)}</h2>
 
       <div className="space-y-4">
         {posts.map((post) => (
