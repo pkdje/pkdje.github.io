@@ -19,7 +19,7 @@ export default async function CategoryPage({
 
   return (
     <main className="min-h-screen p-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">박동제 블로그</h1>
+      <h1 className="text-4xl font-bold mb-8">pkdje0113</h1>
 
       <CategoryNav currentCategory={category} />
 
