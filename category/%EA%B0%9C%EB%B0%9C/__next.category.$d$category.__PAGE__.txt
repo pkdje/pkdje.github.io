@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/347e6bd8594339f8.js","/_next/static/chunks/796e69ae18b2784c.js"],""]
-3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"buildId":"QWOirsRs94xEn6_KtMT5V","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen p-8 max-w-4xl mx-auto","children":[["$","h1",null,{"className":"text-4xl font-bold mb-8","children":"박동제 블로그"}],["$","nav",null,{"className":"flex gap-4 mb-8 overflow-x-auto","children":[["$","$L2","전체",{"href":"/","className":"px-4 py-2 rounded-lg whitespace-nowrap transition bg-gray-800 text-gray-300 hover:bg-gray-700","children":"전체"}],["$","$L2","개발",{"href":"/category/%EA%B0%9C%EB%B0%9C","className":"px-4 py-2 rounded-lg whitespace-nowrap transition bg-gray-800 text-gray-300 hover:bg-gray-700","children":"개발"}]]}],["$","h2",null,{"className":"text-2xl font-semibold mb-6","children":"%EA%B0%9C%EB%B0%9C"}],["$","div",null,{"className":"space-y-4","children":[]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/796e69ae18b2784c.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
-5:null
