@@ -28,7 +28,7 @@ export default async function CategoryPage({
       <div className="space-y-4">
         {posts.map((post) => (
           <Link href={`/posts/${post.slug}`} key={post.slug}>
-            <article className="border border-gray-700 p-6 rounded-lg hover:border-gray-500 transition cursor-pointer">
+            <article className="border border-gray-700 p-6 rounded-lg hover:border-gray-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/20 transition-all duration-300 cursor-pointer">
               <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
               <p className="text-gray-400 text-sm mb-4">{post.date}</p>
               {post.tags && post.tags.length > 0 && (
