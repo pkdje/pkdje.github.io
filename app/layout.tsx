@@ -18,6 +18,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "pkdje0113",
   description: "개발 공부 기록하기",
+  openGraph: {
+    title: "pkdje0113",
+    description: "개발 공부 기록하기",
+    url: "https://pkdje.github.io",
+    siteName: "pkdje0113",
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "pkdje0113",
+    description: "개발 공부 기록하기",
+  },
+  metadataBase: new URL("https://pkdje.github.io"),
 };
 
 export default function RootLayout({

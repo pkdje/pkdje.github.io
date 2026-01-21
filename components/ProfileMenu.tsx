@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Eye } from 'lucide-react';
 
 interface Category {
   category: string;
@@ -16,6 +16,36 @@ interface ProfileMenuProps {
 
 export default function ProfileMenu({ categories }: ProfileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [todayCount, setTodayCount] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
+
+  useEffect(() => {
+    // localStorage로 간단한 카운터 구현
+    const today = new Date().toDateString();
+    const storedDate = localStorage.getItem('visit_date');
+    const storedTotal = localStorage.getItem('total_visits');
+    const storedToday = localStorage.getItem('today_visits');
+
+    // 전체 방문자
+    if (storedTotal) {
+      setTotalCount(parseInt(storedTotal) + 1);
+      localStorage.setItem('total_visits', (parseInt(storedTotal) + 1).toString());
+    } else {
+      setTotalCount(1);
+      localStorage.setItem('total_visits', '1');
+    }
+
+    // 오늘 방문자
+    if (storedDate === today) {
+      const newToday = parseInt(storedToday || '0') + 1;
+      setTodayCount(newToday);
+      localStorage.setItem('today_visits', newToday.toString());
+    } else {
+      setTodayCount(1);
+      localStorage.setItem('visit_date', today);
+      localStorage.setItem('today_visits', '1');
+    }
+  }, []);
 
   return (
     <div className="relative">
@@ -50,7 +80,7 @@ export default function ProfileMenu({ categories }: ProfileMenuProps) {
           <div className="absolute left-0 top-14 w-64 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-20 overflow-hidden">
             {/* 프로필 정보 */}
             <div className="p-4 border-b border-gray-700">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mb-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-gray-600">
                   <img
                     src="/profile.png"
@@ -61,6 +91,22 @@ export default function ProfileMenu({ categories }: ProfileMenuProps) {
                 <div>
                   <p className="font-semibold">pkdje0113</p>
                   <p className="text-sm text-gray-400">CSE 24</p>
+                </div>
+              </div>
+
+              {/* 방문자 통계 */}
+              <div className="flex items-center justify-between text-xs bg-gray-700/30 px-3 py-2 rounded">
+                <div className="flex items-center gap-1 text-gray-400">
+                  <Eye size={12} />
+                  <span>방문자</span>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-gray-300">
+                    전체 <span className="text-blue-400 font-semibold">{totalCount}</span>
+                  </span>
+                  <span className="text-gray-300">
+                    오늘 <span className="text-blue-400 font-semibold">{todayCount}</span>
+                  </span>
                 </div>
               </div>
             </div>
