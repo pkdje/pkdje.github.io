@@ -62,3 +62,17 @@ export function getPostsByCategory(category: string): Post[] {
   const posts = getAllPosts();
   return posts.filter((post) => post.category === category);
 }
+
+export function getCategoryCount(category: string): number {
+  const posts = getAllPosts();
+  return posts.filter((post) => post.category === category).length;
+}
+
+export function getCategoriesWithCount(): { category: string; count: number; displayName: string }[] {
+  const categories = getAllCategories();
+  return categories.map((category) => ({
+    category,
+    count: getCategoryCount(category),
+    displayName: getCategoryDisplayName(category),
+  }));
+}
