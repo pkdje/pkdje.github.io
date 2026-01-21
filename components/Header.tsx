@@ -16,7 +16,7 @@ export default function Header() {
         </div>
         <nav className="flex gap-6">
           <Link href="/" className="text-gray-300 hover:text-white transition">
-            글
+            홈
           </Link>
         </nav>
       </div>
