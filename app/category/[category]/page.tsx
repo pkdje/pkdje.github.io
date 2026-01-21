@@ -1,25 +1,35 @@
-import { getAllPosts } from '@/lib/posts';
+import { getAllCategories, getPostsByCategory } from '@/lib/posts';
 import Link from 'next/link';
 import CategoryNav from '@/components/CategoryNav';
 
-export default function Home() {
-  const posts = getAllPosts();
+export function generateStaticParams() {
+  const categories = getAllCategories();
+  return categories.map((category) => ({
+    category: encodeURIComponent(category),
+  }));
+}
+
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category: encodedCategory } = await params;
+  const category = decodeURIComponent(encodedCategory);
+  const posts = getPostsByCategory(category);
 
   return (
     <main className="min-h-screen p-8 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-8">박동제 블로그</h1>
-      
-      <CategoryNav />
-      
+
+      <CategoryNav currentCategory={category} />
+
+      <h2 className="text-2xl font-semibold mb-6">{category}</h2>
+
       <div className="space-y-4">
         {posts.map((post) => (
           <Link href={`/posts/${post.slug}`} key={post.slug}>
             <article className="border border-gray-700 p-6 rounded-lg hover:border-gray-500 transition cursor-pointer">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">
-                  {post.category}
-                </span>
-              </div>
               <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
               <p className="text-gray-400 text-sm mb-4">{post.date}</p>
               {post.tags && post.tags.length > 0 && (
