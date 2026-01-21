@@ -45,7 +45,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
             ))}
           </div>
         )}
-        <div className="prose prose-invert max-w-none">
+        <div className="prose-custom max-w-none">
           <ReactMarkdown
             components={{
               code({ node, inline, className, children, ...props }: any) {
