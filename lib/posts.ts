@@ -76,3 +76,16 @@ export function getCategoriesWithCount(): { category: string; count: number; dis
     displayName: getCategoryDisplayName(category),
   }));
 }
+
+export function stripMarkdown(markdown: string): string {
+  return markdown
+    .replace(/#{1,6}\s/g, '') // 제목 (#, ##)
+    .replace(/!\[.*?\]\(.*?\)/g, '') // 이미지
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1') // 링크
+    .replace(/`{1,3}[^`]*`{1,3}/g, '') // 코드
+    .replace(/[*_]{1,2}([^*_]+)[*_]{1,2}/g, '$1') // 볼드, 이탤릭
+    .replace(/^\s*[-*+]\s/gm, '') // 리스트
+    .replace(/^\s*\d+\.\s/gm, '') // 번호 리스트
+    .replace(/\n+/g, ' ') // 줄바꿈을 공백으로
+    .trim();
+}

@@ -1,4 +1,4 @@
-import { getAllPosts, getCategoryDisplayName } from '@/lib/posts';
+import { getAllPosts, getCategoryDisplayName, stripMarkdown } from '@/lib/posts';
 import Link from 'next/link';
 import CategoryNav from '@/components/CategoryNav';
 import Sidebar from '@/components/Sidebar';
@@ -48,7 +48,7 @@ export default function Home() {
                       ))}
                     </div>
                   )}
-                  <p className="text-gray-300">{post.content.substring(0, 100)}...</p>
+                  <p className="text-gray-300">{stripMarkdown(post.content).substring(0, 150)}...</p>
                 </article>
               </Link>
             ))}
