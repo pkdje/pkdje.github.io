@@ -14,7 +14,7 @@ export interface Post {
 }
 
 const categoryNames: Record<string, string> = {
-  'dev': '개발',
+  'baek': '백준',
   'life': '일상',
   'review': '리뷰',
 };
