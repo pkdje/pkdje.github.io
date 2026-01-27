@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/7b3b09be094e359e.js","/_next/static/chunks/a313dc31fa1ec1dc.js"],""]
+3:I[24170,["/_next/static/chunks/7b3b09be094e359e.js","/_next/static/chunks/a313dc31fa1ec1dc.js"],"default"]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"Xc5MPfr1kiqDVizhEWJ5r","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"p-8 max-w-4xl mx-auto","children":[["$","$L2",null,{"href":"/","className":"text-blue-400 hover:text-blue-300 mb-8 inline-block","children":"← 홈으로"}],["$","article",null,{"children":[["$","h1",null,{"className":"text-4xl font-bold mb-4","children":"알고리즘 정리"}],["$","p",null,{"className":"text-gray-400 mb-8","children":"2025-01-27"}],["$","div",null,{"className":"flex gap-2 mb-6","children":[["$","span","알고리즘",{"className":"text-sm bg-gray-800 text-gray-300 px-3 py-1 rounded","children":["#","알고리즘"]}]]}],["$","div",null,{"className":"prose-custom max-w-none","children":[["$","p","p-0",{"children":"25-2에 알고리즘을 수강하며 시험 준비를 위해 개인적으로 작성한 알고리즘 정리본을 공유하려고 한다. 해당 정리본을 바탕으로 개인적으로 만족하는 성적도 받았기에 복습하 듯 업로드 하면 한학기를 정리하는데 많은 도움이 될 것 같다.\n해당 게시글에 한 학기 내용을 전부 담을 예정이며 차근차근 복습 겸 읽어본 만큼만 추가할 예정이다."}]]}]]}],["$","$L3",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/a313dc31fa1ec1dc.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null
