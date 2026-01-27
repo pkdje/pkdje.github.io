@@ -15,8 +15,10 @@ export interface Post {
 
 const categoryNames: Record<string, string> = {
   'baek': '백준',
+  'dm' : '데이터마이닝',
   'life': '일상',
   'review': '리뷰',
+  'alg' : '알고리즘'
 };
 
 export function getCategoryDisplayName(category: string): string {
